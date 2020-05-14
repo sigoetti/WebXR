@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <!-- Augmented Reality on the Web in 10 lines of html! https://github.com/jeromeetienne/ar.js -->
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.8/aframe/build/aframe-ar.js"></script>
+
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+<a-scene embedded arjs>
+    <a-assets>
+        <a-asset-item id="obj" src="../Models/Robot/OBJ/Robot.obj">
+            <a-asset-item id="mtl" src="../Models/Robot/OBJ/Robot.mtl"></a-asset-item>
+        </a-asset-item>
+    </a-assets>
+    <a-entity obj-model="obj: #obj; mtl: #mtl" rotation="-90 0 0" position="0 -1 0" animation-mixer>
+        <a-marker-camera type="pattern" url="ar-Dateien/pattern-marker.patt"></a-marker-camera>
+    </a-entity>
+
+</a-scene>
+
+

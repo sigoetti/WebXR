@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>GeoAR.js demo</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="aframe-portal-door.js"></script>
+    <script src="threex-portal-door.js"></script>
+
+    <title>LocationAR</title>
+</head>
+
+<body style='margin: 0; overflow: hidden;'>
+<a-scene
+        vr-mode-ui="enabled: false"
+        embedded
+        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+    <a-portal-door url='assets/aframe-city-360.mp4' position='0 0 0' scale='2 2 2' rotation='0 90 0' gps-entity-place="latitude: 46.928282, longitude: 7.444656;"
+    ><a-portal-door>
+    <a-box color="tomato" scale="5 5 5" position="0 0 0" gps-entity-place="latitude: 46.950262; longitude: 7.438278;"></a-box>
+    <a-box color="tomato" scale="5 5 5" position="0 0 0" gps-entity-place="latitude: 46.948110; longitude: 7.437684;"></a-box>
+    <a-box color="tomato" scale="5 5 5" position="0 0 0" gps-entity-place="latitude: 47.385085; longitude: 8.521097;"></a-box>
+    <a-box color="tomato" scale="5 5 5" position="0 0 0" gps-entity-place="latitude: 47.384847; longitude: 8.520955;"></a-box>
+
+    <a-camera gps-camera rotation-reader>
+    </a-camera>
+</a-scene>
+
+</body>
+</html>

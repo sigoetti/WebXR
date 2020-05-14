@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>WebXR Experiments</title>
+    <style>
+        p {
+            font-size: 4em;
+        }
+    </style>
+    <script>
+        // WebXR requires HTTPS, so the site doesn't work if someone manually enters
+        // the URL and ends up using HTTP. To work around this, force redirect from
+        // http to https for non-localhost addresses.
+        if (window.location.protocol == "http:" &&
+            window.location.hostname != "localhost" &&
+            window.location.hostname != "127.0.0.1" &&
+            window.location.hostname != "[::1]") {
+            window.location = window.location.href.replace('http:', 'https:');
+        }
+    </script>
+</head>
+<body>
+<p>
+    <a href="ar/ar.html">AR with markers (AR.js 1.0)</a> <br/>
+    <a href="arGPS/index.html">Geolocation AR (AR.js 2.0)</a> <br/>
+    <a href="AframeAR/index.html">AframeAR</a> <br/>
+    <a href="Cardbord/index.html">Cardbord</a><br/>
+    <a href="Model-Viewer/Model-Viewer.html">Model-Viewer demo</a><br/>
+    <!--<a href="Vive/index.html">Vive</a><br/>-->
+</p>
+</body>
+</html>

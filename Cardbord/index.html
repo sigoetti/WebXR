@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="a-html" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>360° Image Gallery</title>
+    <script src="scripts/aframe.js"></script>
+    <script src="scripts/aframe-stereo-component.js"></script>
+    <script src="scripts/overunder.js"></script>
+    <script src="scripts/aframe-animation-component3.js"></script>
+    <script src="scripts/aframe-event-set-component3.js"></script>
+    <script src="scripts/image-changer.js"></script>
+    <script src="scripts/navigate-link.js"></script>
+
+
+</head>
+<body class="a-body">
+<a-scene class="fullscreen">
+
+    <a-camera look-controls="" position="0 0 0" rotation="0 60 0" stereocam="eye:left;" >
+        <a-cursor id="cursor" color="green">
+            <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+            <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+        </a-cursor>
+    </a-camera>
+    <a-entity rotation="0 60 0">
+        <a-triangle opacity="0.5" rotation="0 0 -90" position="0 0.4 -3" color="blue" onclick="nextScene()" scale="" visible="" material="" geometry=""></a-triangle>
+    </a-entity>
+
+    <a-plane color="#BBB" height="1" width="1" rotation="-90 0 0" navigate-link="on: mouseenter;  link: index.html;">
+        <a-text value="Home" color="black" scale="1.5 1.5 1.5" position="-0.5 0 0" rotation="" visible="" text=""></a-text>
+    </a-plane>
+
+    <a-entity id="scene1" visible="true">
+        <a-entity id="view" overunder="img/kies2.jpg"></a-entity>
+    </a-entity>
+
+    <a-entity id="scene2" visible="false">
+        <a-entity id="view" overunder="img/seeburg1.jpg"></a-entity>
+    </a-entity>
+
+    <a-entity id="scene3" visible="false">
+        <a-entity id="view" overunder="img/hafen2.jpg"></a-entity>
+    </a-entity>
+
+</a-scene>
+</body></html>
